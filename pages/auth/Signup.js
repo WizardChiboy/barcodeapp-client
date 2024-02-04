@@ -94,56 +94,52 @@ const SignUp = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          style={styles.container}
-        >
-          <View style={styles.header}>
-            <Text style={styles.headerText}>Sign up</Text>
-          </View>
-          <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
-            <Text style={styles.label}>Full name</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your full name"
-              value={name}
-              onChangeText={(text) => setName(text)}
-            />
-            <Text style={styles.errorText}>{nameError}</Text>
-          </View>
-          <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
-            <Text style={styles.label}>Email</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your email"
-              value={email}
-              onChangeText={(text) => setEmail(text)}
-            />
-            <Text style={styles.errorText}>{emailError}</Text>
-          </View>
-          <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
-            <Text style={styles.label}>Phone number</Text>
-            <TextInput
-              style={styles.input}
-              value={phone}
-              placeholder="Enter your phone number"
-              keyboardType={"number-pad"}
-              onChangeText={(text) => setPhone(text)}
-            />
-            <Text style={styles.errorText}>{phoneError}</Text>
-          </View>
-          <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
-            <Text style={styles.label}>Password</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your password"
-              value={password}
-              onChangeText={(text) => setPassword(text)}
-              secureTextEntry={true}
-            />
-            <Text style={styles.errorText}>{passwordError}</Text>
-          </View>
-          <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Sign up</Text>
+        </View>
+        <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
+          <Text style={styles.label}>Full name</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your full name"
+            value={name}
+            onChangeText={(text) => setName(text)}
+          />
+          <Text style={styles.errorText}>{nameError}</Text>
+        </View>
+        <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
+          <Text style={styles.label}>Email</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your email"
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+          />
+          <Text style={styles.errorText}>{emailError}</Text>
+        </View>
+        <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
+          <Text style={styles.label}>Phone number</Text>
+          <TextInput
+            style={styles.input}
+            value={phone}
+            placeholder="Enter your phone number"
+            keyboardType={"number-pad"}
+            onChangeText={(text) => setPhone(text)}
+          />
+          <Text style={styles.errorText}>{phoneError}</Text>
+        </View>
+        <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
+          <Text style={styles.label}>Password</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your password"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+            secureTextEntry={true}
+          />
+          <Text style={styles.errorText}>{passwordError}</Text>
+        </View>
+        {/* <View style={[styles.formItem, { width: screenWidth * 0.8 }]}>
             <Text style={styles.label}>Confirm Password</Text>
             <TextInput
               style={styles.input}
@@ -153,16 +149,15 @@ const SignUp = () => {
               secureTextEntry={true}
             />
             <Text style={styles.errorText}>{confirmPasswordError}</Text>
-          </View>
-          <Button text={"Submit"} onPress={handleSignUp} />
-          <TouchableOpacity
-            style={styles.regButton}
-            activeOpacity={0.7}
-            onPress={handleRedirect}
-          >
-            <Text style={styles.regLink}>Already have an account? Login</Text>
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
+          </View> */}
+        <Button text={"Submit"} onPress={handleSignUp} />
+        <TouchableOpacity
+          style={styles.regButton}
+          activeOpacity={0.7}
+          onPress={handleRedirect}
+        >
+          <Text style={styles.regLink}>Already have an account? Login</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -177,7 +172,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: "100%",
     padding: 10,
-    paddingTop: 25,
+    paddingTop: 100,
   },
 
   header: {
