@@ -7,6 +7,7 @@ import * as yup from "yup"; // Import Yup
 
 import axios from "../../axios";
 import Toast from "react-native-toast-message";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const validationSchema = yup.object().shape({
   email: yup.string().email("Invalid email").required("Email is required"),
@@ -22,6 +23,10 @@ const Login = () => {
   const [phoneError, setPhoneError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const navigation = useNavigation();
+
+  const handleStorage = async (data) => {
+    await AsyncStorage.setItem("user", JSON.stringify(data));
+  };
 
   const handleLogin = async () => {
     try {
@@ -43,9 +48,11 @@ const Login = () => {
       try {
         await axios.post("/auth/login", payload).then((res) => {
           // console.log(res.data.data.fullname);
+          handleStorage(res.data.data);
 
           if (res.data.status == 200) {
             console.log(res.data.data);
+
             alert("User loggged in");
 
             navigation.navigate("Home");

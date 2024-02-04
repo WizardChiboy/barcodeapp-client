@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Dimensions, ScrollView } from "react-native";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native"; // Import useNavigation
+import { useNavigation } from "@react-navigation/native";
+// Import useNavigation
 
 const Home = () => {
   const navigation = useNavigation();
@@ -13,20 +14,7 @@ const Home = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.btn} onPress={handleRedirect}>
-          <Text style={styles.text}>Button one</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.text}>Button two</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.text}>Button three</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.text}>Button four</Text>
-        </TouchableOpacity>
-      </View>
+      <Text>WELCOME</Text>
     </ScrollView>
   );
 };

@@ -5,7 +5,7 @@ import QRCode from "react-native-qrcode-svg";
 import axios from "../../axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const ScanMail = () => {
+const ScanName = () => {
   const [id, setId] = useState("");
   const [userDetails, setUserDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -48,12 +48,11 @@ const ScanMail = () => {
     }
   }, [isLoading]);
 
-  const generateQRCodeValue = () => JSON.stringify(userDetails?.email);
+  const generateQRCodeValue = () => JSON.stringify(userDetails?.fullname);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.headerText}> scan email</Text>
-
+      <Text style={styles.headerText}> scan name</Text>
       <View style={styles.header}>
         <TouchableOpacity>
           <QRCode value={generateQRCodeValue()} />
@@ -63,7 +62,7 @@ const ScanMail = () => {
   );
 };
 
-export default ScanMail;
+export default ScanName;
 
 const styles = StyleSheet.create({
   container: {
@@ -81,6 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+
   header: {
     marginBottom: 20,
   },
